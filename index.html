@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stevie Acuña — Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --ink:#1B1B1B; --mute:#555555; --rule:#1B1B1B; --soft:#D8D8D8; --accent:#E2452B; --grid:rgba(0,140,200,.3);
+  --display:"Abril Fatface","Bodoni 72","Didot",Georgia,serif;
+  --text:"EB Garamond","Adobe Garamond Pro",Garamond,"Times New Roman",serif;
+  --lh:1.5rem;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--text);font-size:1.0625rem;line-height:var(--lh);font-feature-settings:"kern","liga","onum";text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.page{max-width:66rem;margin:0 auto;padding:0 1.5rem}
+
+/* header */
+h1{margin:0 0 1rem;font:400 3.7rem/1.15 var(--display);text-transform:uppercase;letter-spacing:-.01em}
+.role{font:italic 600 clamp(1.6rem,4vw,2.3rem)/1 var(--text);margin:0 .25rem .35rem 0}
+
+/* columns */
+.cols{position:relative;display:grid;grid-template-columns:18.5rem 1fr;min-height:100vh;min-height:100dvh}
+.side{padding:3.5rem 1.5rem 1rem;background:#F0F0F0}
+.main{padding:calc(3.5rem + 2 * 3.7rem * 1.15 + 6.5rem) 0 4rem 2.5rem;min-width:0}
+h2{font:400 1.3rem/1.5rem var(--display);text-transform:uppercase;margin:0 0 .75rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule);letter-spacing:.005em}
+.side section{margin-bottom:2.25rem}
+.side p{margin:0;color:var(--mute);font-size:1rem;line-height:1.5rem}
+.edu{margin-bottom:.75rem}
+.edu b{display:block;font-weight:700;color:var(--ink)}
+.edu i{display:block;color:var(--mute);line-height:1.3rem}
+
+/* work grid */
+.grid3{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem 1.25rem}
+.thumb{display:block;color:var(--ink)}
+.thumb .img{aspect-ratio:4/5;background:#ECECEC;display:flex;align-items:flex-end;padding:.75rem;font:400 2.2rem/1 var(--display);color:#B5B5B5;border:1px solid transparent;transition:border-color .15s,color .15s}
+.thumb .img.has{padding:0;background:#ECECEC}
+.thumb .img.has img{display:block;width:100%;height:100%;object-fit:cover}
+.thumb:hover .img,.thumb:focus-visible .img{border-color:var(--accent);color:var(--accent)}
+.thumb b{display:block;font-weight:700;margin-top:.6rem;line-height:1.3rem}
+.thumb i{display:block;color:var(--mute);line-height:1.3rem;font-size:.98rem}
+.bl{list-style:none;margin:0 0 1.5rem;padding:0;color:var(--mute)}
+.bl li{position:relative;padding-left:1rem;margin-bottom:.15rem}
+.bl li::before{content:"";position:absolute;left:.1rem;top:.65rem;width:.3rem;height:.3rem;border-radius:50%;background:var(--accent)}
+.detail .pic{display:block;width:100%;height:auto;aspect-ratio:3600/2203;object-fit:contain;margin-top:1.5rem;background:#ECECEC}
+.detail .pic{cursor:zoom-in}
+.detail .pic:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+#lb{position:fixed;inset:0;z-index:100;background:rgba(15,15,15,.93);display:flex;align-items:center;justify-content:center;padding:max(1rem,env(safe-area-inset-top,0px)) max(1rem,env(safe-area-inset-right,0px)) max(1rem,env(safe-area-inset-bottom,0px)) max(1rem,env(safe-area-inset-left,0px));cursor:zoom-out}
+#lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+#lb button{position:absolute;top:max(.75rem,env(safe-area-inset-top,0px));right:max(.75rem,env(safe-area-inset-right,0px));width:2.75rem;height:2.75rem;border:0;background:rgba(255,255,255,.14);color:#fff;font:400 1.9rem/1 var(--text);cursor:pointer;border-radius:50%}
+#lb button:hover{background:var(--accent)}
+.soc{display:flex;gap:.8rem;margin:0 0 4.15rem}
+.soc a{display:block;width:1.35rem;height:1.35rem;color:var(--accent)}
+.soc a:hover{color:var(--ink)}
+.soc svg{display:block;width:100%;height:100%}
+.back{display:inline-block;font-weight:600;margin-bottom:1.5rem}
+.main.isdetail{padding-top:3.5rem}
+.detail .img{margin-top:1.5rem;aspect-ratio:3600/2203;background:#ECECEC;display:flex;align-items:center;justify-content:center;font:400 5rem/1 var(--display);color:#C4C4C4;margin-bottom:1.25rem}
+.detail h3{font:400 2.4rem/1.2 var(--display);margin:0 0 .5rem}
+.detail p{margin:0 0 var(--lh);max-width:38rem}
+.detail .sub{font-style:italic;color:var(--mute)}
+[hidden]{display:none!important}
+
+/* baseline grid */
+body.grid::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--lh) - 1px),var(--grid) calc(var(--lh) - 1px),var(--grid) var(--lh))}
+.gt{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:max(1rem,env(safe-area-inset-bottom,0px));z-index:60;font:600 .85rem var(--text);padding:.55rem .9rem;background:var(--ink);color:var(--paper);border:0;cursor:pointer}
+.gt[aria-pressed="true"]{background:var(--accent);color:#fff}
+
+@media (max-width:30rem){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:50rem){
+  .cols{grid-template-columns:1fr}
+  .main{padding:2rem 0 4rem}
+  .main.isdetail{padding-top:2rem}
+  .detail h3{font-size:2rem}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cols">
+    <aside class="side">
+      <h1><a href="#" aria-label="Stevie Acuña, back to home">Stevie<br>Acuña</a></h1>
+      <div class="soc"><a href="mailto:stevieacunagd@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a><a href="https://www.instagram.com/stevie.acuna/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/in/stevie-r-acu%C3%B1a-53b5bab7/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.21c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.3h-4V9.75z"/></svg></a></div>
+      <section class="hs">
+        <h2>Design Skills</h2>
+        <p>Typography, grid systems, single and multi-page layout, copyfitting/text formatting, typesetting, style sheets, print production, prepress preparation. Creating templates such as layout templates, parent pages, paragraph styles, GREP styles, and character styles in Adobe InDesign for faster efficiency.</p>
+      </section>
+      <section class="hs">
+        <h2>About</h2>
+        <p>Hi there! My name is Stevie and my journey as a graphic designer isn’t quite what anyone would expect. I began my professional career as a Family Law Paralegal where drafting, formatting, and typesetting legal pleadings introduced me to the fascinating world of typography. From there, I became engrossed in learning and understanding—not just type—graphic design. For about two years, I enrolled in online courses from CalArts and LinkedIn Learning, I enrolled in graphic design courses at my local community college, and secured a six-month internship with a local freelance graphic designer. At some point, I was able to secure a professional design position at a local media group that produces a weekly newspaper, bimonthly magazine, and annual nonprofit books, among other projects. Since then, I have immensely strengthened my skills in graphic design, particularly in typesetting, page layout, grid systems, print production, and prepress preparation. I feel tremendously fulfilled in this industry. Moving forward, it is my passion to help keep print design alive.</p>
+        <p style="margin-top:1.5rem">Let me know what you would like to achieve and I will make it my goal to create something you will be proud to call your own.</p>
+      </section>
+    <section id="scope" hidden>
+        <h2>Project Details</h2>
+        <div id="scopebody"></div>
+      </section>
+    </aside>
+
+    <main class="main">
+      <h2 id="wh">Selected Work</h2>
+      <div id="grid" class="grid3"></div>
+      <div id="detail" class="detail" hidden></div>
+    </main>
+  </div>
+</div>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden><button type="button" aria-label="Close">&times;</button><img alt=""></div>
+<button class="gt" id="gt" type="button" aria-pressed="false">Show baseline grid</button>
+<script>
+var P=[];for(var i=1;i<=5;i++){var n=('0'+i).slice(-2);P.push({n:n,t:'Project Title '+n,c:'Category'})}
+
+/* ---------- IMAGES ----------
+   IMG is the folder (next to index.html) that holds your pictures.
+   If your folder has a different name, change it here and nowhere else. */
+var IMG='images/';
+
+/* Thumbnails on the main page */
+P[0].thumb=IMG+'tnp.jpg';  P[0].thumbAlt='Montecito Journal newspaper cover';
+P[1].thumb=IMG+'tgl.jpg';  P[1].thumbAlt='The Giving List cover';
+P[2].thumb=IMG+'triv.jpg'; P[2].thumbAlt='the Riv. cover';
+P[3].thumb=IMG+'tmjm.jpg'; P[3].thumbAlt='Montecito Journal magazine cover';
+P[4].thumb=IMG+'tsbcc.jpg';P[4].thumbAlt='Santa Barbara City College brochure cover';
+
+/* Images on each project page (they open larger when clicked) */
+P[0].pics=[
+  {src:IMG+'np1.jpg',alt:'Montecito Journal newspaper cover and interior spreads, image 1'},
+  {src:IMG+'np2.jpg',alt:'Montecito Journal newspaper cover and interior spreads, image 2'},
+  {src:IMG+'np3.jpg',alt:'Montecito Journal newspaper cover and interior spreads, image 3'},
+  {src:IMG+'np4.jpg',alt:'Montecito Journal newspaper cover and interior spreads, image 4'}
+];
+P[1].pics=[
+  {src:IMG+'gl1.jpg',alt:'The Giving List cover and interior spreads, image 1'},
+  {src:IMG+'gl2.jpg',alt:'The Giving List cover and interior spreads, image 2'},
+  {src:IMG+'gl3.jpg',alt:'The Giving List cover and interior spreads, image 3'},
+  {src:IMG+'gl4.jpg',alt:'The Giving List cover and interior spreads, image 4'}
+];
+P[2].pics=[
+  {src:IMG+'riv1.jpg',alt:'the Riv. special feature section, image 1'},
+  {src:IMG+'riv2.jpg',alt:'the Riv. special feature section, image 2'}
+];
+P[3].pics=[
+  {src:IMG+'mjm1.jpg',alt:'Montecito Journal magazine special section, image 1'},
+  {src:IMG+'mjm2.jpg',alt:'Montecito Journal magazine special section, image 2'}
+];
+P[4].pics=[
+  {src:IMG+'sbcc1.jpg',alt:'Santa Barbara City College admissions brochure'}
+];
+P[0].t='Montecito Journal';P[0].c='Newspaper layout';
+
+P[1].t='The Giving List';P[1].c='Book layout';
+P[1].scope='<ul class="bl"><li>Multi-page layout<br>(4 books, roughly 130+ pages each)</li><li>Layout design</li><li>Copyfitting/text formatting/typesetting</li><li>Proofreading</li><li>Print production</li><li>Prepress preparation</li><li>Image manipulation</li></ul><p>Annual ongoing project. Serve as deputy art director for <i>The Giving List</i>, a series of nonprofit books published by the <i>Montecito Journal</i>. Art direct the design of two-page spreads, used to highlight each nonprofit organization in the book, by offering a refreshed layout and updated graphics and artwork. The lefthand side of the page sits on a strict baseline grid to enforce balance and a solid structure, which complements the readability of the narrative. However, the column numbers are allowed to vary between two and three. The righthand side of the page offers a more fluid and less structured layout to avoid repetition and create truly unique two-page spreads for each nonprofit organization. Prepare and utilize a series of paragraph styles, character styles, and style guidelines for faster efficiency. Apply copyfitting, text formatting, and typesetting rules to create a smooth and effortless reading experience. Employ various typefaces at different weights and point sizes to establish a visual hierarchy. Thoroughly proof and apply corrections to each page, as necessary. Prepare and review all final pdf files to ensure they meet prepress requirements.</p>';
+
+P[2].t='the Riv.';P[2].c='Magazine layout';
+P[2].scope='<ul class="bl"><li>Multi-page layout<br>(roughly 5–40+ pages)</li><li>Layout design</li><li>Copyfitting/text formatting/typesetting</li><li>Proofreading</li><li>Print production</li><li>Image manipulation</li></ul><p>Fully concepted and designed magazine layout for special feature section of <i>the Riv.</i> magazine. The special feature section is an ongoing section in <i>the Riv.</i> that features local artisans and ranges in topics rooted in architecture. Each artisan receives a single-page spread. Created a fully developed and modifiable Adobe InDesign template consisting of parent pages, paragraph styles, character styles, and GREP styles for faster efficiency. Each special section includes a refreshed appearance (new typography, color palette, graphic elements) that complements the subject matter for a given issue. The InDesign doc itself serves as the formal base for these sections. The already established baseline grid, margins, top and bottom folios, and the page size remain relatively the same. The purpose of the template is to maximize efficiency while maintaining the overall visual identity across multiple issues.</p>';
+P[3].t='Montecito Journal';P[3].c='Magazine layout';
+P[4].t='Santa Barbara City College';P[4].c='Trifold layout';
+P[4].scope='<ul class="bl"><li>Single-page layout (trifold)</li><li>Layout design</li><li>Art direction</li><li>Conceptualization</li><li>Copyfitting/text formatting/typesetting</li><li>Proofreading</li><li>Print production</li><li>Image manipulation</li></ul><p>Conceptualized and art directed admissions brochure for Santa Barbara City College. Provided image assets, logos, copy, and style guide to create a piece of marketing material that highlights the campuses many offerings and attracts potential applicants. Selected imagery that conveyed movement and life on campus. Separated copy into related categories to begin conceptualizing the layout and arranging the categories into a meaningful order. Created an InDesign trifold layout at a width of 5.6875 inches and a height of 11 inches per panel, with a bleed of 0.125 inches. Set up layers to separate the copy from the images and graphics for improved navigation.</p>';
+P[3].scope='<ul class="bl"><li>Multi-page layout<br>(roughly 5–40+ pages)</li><li>Layout design</li><li>Copyfitting/text formatting/typesetting</li><li>Proofreading</li><li>Print production</li><li>Image manipulation</li></ul><p>Fully concepted and designed magazine layout for special feature section of the <i>Montecito Journal</i> magazine. The special feature section is an ongoing section in the <i>Montecito Journal</i> magazine that highlights local Montecito businesses and entrepreneurs and ranges in various topics. Each business/entrepreneur receives a single-page spread. Created a fully developed and modifiable Adobe InDesign template consisting of parent pages, paragraph styles, character styles, and GREP styles for faster efficiency. Each special section includes a refreshed appearance (new typography, color palette, graphic elements) that complements the subject matter for a given issue. The InDesign doc itself serves as the formal base for these sections. The already established baseline grid, margins, top and bottom folios, and the page size remain relatively the same. The purpose of the template is to maximize efficiency while maintaining the overall visual identity across&nbsp;multiple&nbsp;issues.</p>';
+function imgs(p){var h='',n=p.imgs||1;if(p.pics){return p.pics.map(function(x){return '<img class="pic" tabindex="0" role="button" aria-label="Enlarge image" src="'+x.src+'" loading="lazy" decoding="async" alt="'+x.alt+'">'}).join('')}for(var k=1;k<=n;k++){h+='<div class="img">'+(k>1?p.n+'.'+k:p.n)+'</div>'}return h}
+
+var DEF='<p>This is placeholder text. Real text will be added soon.</p>';
+P[0].scope='<ul class="bl"><li>Multi-page layout<br>(40+ pages per week)</li><li>Cover design</li><li>Pagination</li><li>Build and utilize layout templates</li><li>Create and manage paragraph and character styles</li><li>Copyfitting/text formatting/typesetting</li><li>Proofreading</li><li>Print production</li><li>Prepress preparation</li><li>Image manipulation</li></ul><p>Ongoing project. Serve as layout designer and production manager for the <i>Montecito Journal</i>’s weekly local newspaper. Project timeline is two days. Utilize prebuilt style and formatted InDesign templates and fully developed paragraph and character styles, as well as parent pages, to build out each issue. Liaise with sales team to ensure advertisements meet size requirements and technical specifications for newsprint. Coordinate with managing editor regarding pagination and content for the week. Apply industry standard practices regarding copyfitting, text formatting, and typesetting rules to content. Thoroughly proof and apply corrections to each page, as necessary. Prepare and review all final pdf files to ensure they meet prepress requirements for newsprint. At times, communicate with prepress to troubleshoot and correct unseen errors.</p>';
+var grid=document.getElementById('grid'),det=document.getElementById('detail'),wh=document.getElementById('wh'),main=document.querySelector('.main'),hs=document.querySelectorAll('.hs'),sc=document.getElementById('scope'),sb=document.getElementById('scopebody');
+grid.innerHTML=P.map(function(p,i){return '<a class="thumb" href="#project-'+(i+1)+'" aria-label="'+p.t+'">'+(p.thumb?'<div class="img has"><img src="'+p.thumb+'" alt="'+p.thumbAlt+'"></div>':'<div class="img">'+p.n+'</div>')+'<b>'+p.t+'</b><i>'+p.c+'</i></a>'}).join('');
+var lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbLast=null;
+function openLB(i){lbi.src=i.src;lbi.alt=i.alt;lb.hidden=false;document.body.style.overflow='hidden';lbLast=i;lb.querySelector('button').focus()}
+function closeLB(){lb.hidden=true;lbi.removeAttribute('src');document.body.style.overflow='';if(lbLast&&document.contains(lbLast))lbLast.focus()}
+det.addEventListener('click',function(e){var t=e.target;if(t.classList&&t.classList.contains('pic'))openLB(t)});
+det.addEventListener('keydown',function(e){var t=e.target;if((e.key==='Enter'||e.key===' ')&&t.classList&&t.classList.contains('pic')){e.preventDefault();openLB(t)}});
+lb.addEventListener('click',closeLB);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLB()});
+function route(){
+  if(!lb.hidden)closeLB();
+  var m=location.hash.match(/^#project-(\d)$/),p=m&&P[m[1]-1];
+  if(p){
+    det.innerHTML='<a class="back" href="#">&larr; All work</a><h3>'+p.t+'</h3><p class="sub">'+p.c+'</p>'+imgs(p);
+    grid.hidden=true;det.hidden=false;wh.hidden=true;main.classList.add('isdetail');sb.innerHTML=p.scope||DEF;sc.hidden=false;hs.forEach(function(e){e.hidden=true});
+  }else{grid.hidden=false;det.hidden=true;wh.hidden=false;main.classList.remove('isdetail');sc.hidden=true;hs.forEach(function(e){e.hidden=false})}
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);route();
+var gt=document.getElementById('gt');
+gt.addEventListener('click',function(){
+  var on=document.body.classList.toggle('grid');
+  gt.setAttribute('aria-pressed',on);
+  gt.textContent=on?'Hide baseline grid':'Show baseline grid';
+});
+</script>
+</body>
+</html>
